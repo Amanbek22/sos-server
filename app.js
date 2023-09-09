@@ -13,24 +13,6 @@ const app = express();
 const port = 3333;
 const db = getFirestore(firebaseApp);
 
-const users = [
-  {
-    name: "Alex",
-    lat: 42.870789,
-    lng: 74.59221,
-  },
-  {
-    name: "Alex 2",
-    lat: 42.857935,
-    lng: 74.572435,
-  },
-  {
-    name: "Alex 3",
-    lat: 42.857429,
-    lng: 74.568291,
-  },
-];
-
 app.get("/", function (req, res) {
   res.send("Hello Sos.kg!");
 });
