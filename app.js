@@ -10,14 +10,23 @@ const {
 } = require("firebase/firestore");
 
 const app = express();
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 const port = 3333;
 const db = getFirestore(firebaseApp);
 
 app.get("/", function (req, res) {
-  res.send("Hello Sos.kg!");
+  res.send("Hello Sos.kg!!!");
 });
 
-app.listen(port, function () {
+io.on("connection", (socket) => {
+  console.log("user connected");
+  socket.on("disconnect", function () {
+    console.log("user disconnected");
+  });
+});
+
+server.listen(port, function () {
   console.log("Example app listening on port 3333!");
 });
 
@@ -54,7 +63,7 @@ app.get("/find-police", async (req, res) => {
   };
   try {
     const users = await getPolice();
-    const nearestUser = await findNearestUser(myLocation, users);
+    const nearestUser = await findNearestUser(myLocation, users, 5);
     res.send(JSON.stringify(nearestUser));
   } catch (error) {
     res.send("Something went wrong. Please try again");

@@ -14,10 +14,8 @@ function calculateDistance(lat1, lng1, lat2, lng2) {
   return distance; // Distance in kilometers
 }
 
-module.exports =  function findNearestUser(myLocation, users) {
-  let nearestUser = null;
-  let nearestDistance = Infinity;
-
+module.exports =  function findNearestUser(myLocation, users, count) {
+  const nearestUsers = [];
   for (const user of users) {
     const distance = calculateDistance(
       myLocation.lat,
@@ -25,11 +23,15 @@ module.exports =  function findNearestUser(myLocation, users) {
       user.position._lat,
       user.position._long
     );
-    if (distance < nearestDistance) {
-      nearestDistance = distance;
-      nearestUser = user;
-    }
+    user.distance = distance; // Store the distance in the user object
+    nearestUsers.push(user);
+    // if (distance < nearestDistance) {
+    //   nearestDistance = distance;
+    //   nearestUser = user;
+    // }
   }
 
-  return nearestUser;
+  nearestUsers.sort((a, b) => a.distance - b.distance); // Sort the users by distance
+
+  return nearestUsers.slice(0, count); // Get the nearest 'count' users
 }
