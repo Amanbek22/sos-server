@@ -20,8 +20,8 @@ module.exports =  function findNearestUser(myLocation, users, count) {
     const distance = calculateDistance(
       myLocation.lat,
       myLocation.lng,
-      user.position._lat,
-      user.position._long
+      user?.position._lat,
+      user?.position._long
     );
     user.distance = distance; // Store the distance in the user object
     nearestUsers.push(user);
