@@ -1,0 +1,61 @@
+[debug] [2023-11-07T16:35:36.896Z] ----------------------------------------------------------------------
+[debug] [2023-11-07T16:35:36.901Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Amanbek_Asylbekov\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-11-07T16:35:36.902Z] CLI Version:   12.8.0
+[debug] [2023-11-07T16:35:36.902Z] Platform:      win32
+[debug] [2023-11-07T16:35:36.902Z] Node Version:  v16.15.0
+[debug] [2023-11-07T16:35:36.904Z] Time:          Tue Nov 07 2023 22:35:36 GMT+0600 (East Kazakhstan Time)
+[debug] [2023-11-07T16:35:36.904Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-07T16:35:37.080Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-07T16:35:37.081Z] > authorizing via signed-in user (een9.aman@gmail.com)
+[debug] [2023-11-07T16:35:37.081Z] [iam] checking project soskg-d8da5 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-11-07T16:35:37.084Z] > refreshing access token with scopes: []
+[debug] [2023-11-07T16:35:37.088Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-07T16:35:37.088Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-07T16:35:37.522Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-07T16:35:37.523Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-07T16:35:37.541Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/soskg-d8da5:testIamPermissions [none]
+[debug] [2023-11-07T16:35:37.541Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/soskg-d8da5:testIamPermissions x-goog-quota-user=projects/soskg-d8da5
+[debug] [2023-11-07T16:35:37.542Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/soskg-d8da5:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-11-07T16:35:38.685Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/soskg-d8da5:testIamPermissions 200
+[debug] [2023-11-07T16:35:38.686Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/soskg-d8da5:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-11-07T16:35:38.687Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/soskg-d8da5/serviceAccounts/soskg-d8da5@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-11-07T16:35:38.687Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/soskg-d8da5/serviceAccounts/soskg-d8da5@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-11-07T16:35:39.840Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/soskg-d8da5/serviceAccounts/soskg-d8da5@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-11-07T16:35:39.840Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/soskg-d8da5/serviceAccounts/soskg-d8da5@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'soskg-d8da5'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-11-07T16:35:39.847Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5 [none]
+[debug] [2023-11-07T16:35:40.452Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5 200
+[debug] [2023-11-07T16:35:40.452Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5 {"projectId":"soskg-d8da5","projectNumber":"899549071789","displayName":"soskg","name":"projects/soskg-d8da5","resources":{"hostingSite":"soskg-d8da5","realtimeDatabaseInstance":"soskg-d8da5-default-rtdb","storageBucket":"soskg-d8da5.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_5632aa07-ff9b-486a-a7d8-35a4dc229600"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-11-07T16:35:40.458Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-11-07T16:35:40.458Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/soskg-d8da5
+[debug] [2023-11-07T16:35:40.459Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-11-07T16:35:40.459Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/soskg-d8da5
+[debug] [2023-11-07T16:35:40.460Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudbuild.googleapis.com [none]
+[debug] [2023-11-07T16:35:40.461Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudbuild.googleapis.com x-goog-quota-user=projects/soskg-d8da5
+[debug] [2023-11-07T16:35:40.462Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/artifactregistry.googleapis.com [none]
+[debug] [2023-11-07T16:35:40.462Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/artifactregistry.googleapis.com x-goog-quota-user=projects/soskg-d8da5
+[debug] [2023-11-07T16:35:41.815Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/runtimeconfig.googleapis.com 200
+[debug] [2023-11-07T16:35:41.815Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-11-07T16:35:41.824Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudfunctions.googleapis.com 200
+[debug] [2023-11-07T16:35:41.825Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-11-07T16:35:41.829Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/artifactregistry.googleapis.com 200
+[debug] [2023-11-07T16:35:41.829Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-11-07T16:35:41.834Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudbuild.googleapis.com 200
+[debug] [2023-11-07T16:35:41.834Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/soskg-d8da5/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-11-07T16:35:41.836Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5/adminSdkConfig [none]
+[debug] [2023-11-07T16:35:42.409Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5/adminSdkConfig 200
+[debug] [2023-11-07T16:35:42.409Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/soskg-d8da5/adminSdkConfig {"projectId":"soskg-d8da5","databaseURL":"https://soskg-d8da5-default-rtdb.firebaseio.com","storageBucket":"soskg-d8da5.appspot.com","locationId":"us-central"}
+[debug] [2023-11-07T16:35:42.411Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/soskg-d8da5/configs [none]
+[debug] [2023-11-07T16:35:43.040Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/soskg-d8da5/configs 200
+[debug] [2023-11-07T16:35:43.040Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/soskg-d8da5/configs {}
