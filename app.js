@@ -48,7 +48,7 @@ const getPolice = async () => {
     });
     return arr;
   } catch (error) {
-    throw Error("There is issue with Police data", error);
+    throw Error("There is issue with Users data", error);
   }
 };
 
@@ -79,8 +79,9 @@ app.get("/find-police", async (req, res) => {
   try {
     const users = await getPolice();
     const nearestUser = await findNearestUser(myLocation, users, 5);
+    const nearestUserWithoutMe = nearestUser.filter((el) => el.uid !== req.query.uid); 
     createSos({
-      nearestUser,
+      nearestUser: nearestUserWithoutMe,
       ...req.query,
     })
     res.send(JSON.stringify(nearestUser));
